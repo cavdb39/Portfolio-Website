@@ -129,6 +129,10 @@ header {
       border-radius: 2rem;
       text-align: center;
       background-color: var(--accent);
+
+      &:hover {
+        color: #fff;
+      }
     }
   }
 }
@@ -136,17 +140,18 @@ header {
 #tile-container {
   height: calc(100%-16rem);
   display: grid;
-  margin: 1rem 20% 1rem 20%;
+  margin: 1rem 15% 1rem 15%;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: repeat(1fr, 6);
 }
 
 .tile {
   margin: 1rem;
-  padding: 1rem;
+  padding: 1.25rem;
   background-color: var(--surface);
   transition: all 0.2s ease-in;
   border-radius: 1rem;
+  overflow: hidden;
 
   &:hover {
     background-color: var(--hover);
@@ -158,16 +163,20 @@ header {
   }
 
   & > div {
+    margin-top: 1rem;
     width: 100%;
-    height: 75%;
+    max-height: 75%;
 
     & > img {
-      margin-top: 1rem;
       border-radius: 0.5rem;
       width: 100%;
       height: auto;
     }
   }
+}
+
+.date {
+  margin-top: 1rem;
 }
 
 @media screen and (max-width: 920px) {
