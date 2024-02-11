@@ -77,6 +77,12 @@ header {
   }
 }
 
+@media screen and (max-width: 920px) {
+  header input {
+    display: none;
+  }
+}
+
 #hero-section {
   width: 100%;
 }
@@ -140,11 +146,96 @@ header {
 #projects-section {
   height: calc(100% - 4rem);
   width: 100%;
-  background-image: linear-gradient(var(--hover), var(--background));
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  background-image: linear-gradient(#1f2223, var(--background));
 }
 
-@media screen and (max-width: 920px) {
-  header input {
+#table-of-contents {
+  background-color: var(--surface);
+  margin: 1rem;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  font-size: 1.25rem;
+}
+
+#table-of-contents span {
+  color: #aaa;
+  font-size: 1rem;
+}
+
+#table-of-contents a {
+  display: block;
+  position: relative;
+  margin-bottom: 0.75rem;
+}
+
+#table-of-contents a::before {
+  content: "";
+  position: absolute;
+  bottom: -0.25rem;
+  left: 0;
+  width: 0;
+  height: 2px; /* Adjust thickness as needed */
+  background-color: var(--text);
+  transition: width 0.2s ease-in-out; /* Transition for the underline */
+}
+
+#table-of-contents a:hover::before {
+  width: 6rem;
+}
+
+#projects-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.tile {
+  margin: 1rem 3rem;
+  display: flex;
+  background-color: var(--surface);
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.tile > div.tile-info-container {
+  flex: 0 0 50%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: justify;
+}
+
+.date {
+  text-align: end;
+}
+
+.tile > div.tile-image-container {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  flex: 1;
+}
+
+.tile > div.tile-info-container h1 {
+  margin-bottom: 0.5rem;
+  transition: all ease-in-out 0.2s;
+}
+
+.tile > div.tile-info-container > p {
+  align-self: flex-end;
+}
+
+.tile > div.tile-image-container > img {
+  max-width: 100%;
+  border-radius: 0.5rem;
+  box-shadow: #222 3px 3px 3px;
+}
+
+@media screen and (max-width: 1000px) {
+  .tile-image-container {
     display: none;
   }
 }
